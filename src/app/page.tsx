@@ -1,4 +1,5 @@
-import DelayedRender from "@/components/DelayedRander";
+import DelayedRender from '@/components/DelayedRander'
+import InputName from '@/components/InputName'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <DelayedRender delay={2000}>
         <div>이 메시지는 2초 후에 나타납니다.</div>
       </DelayedRender>
+      <InputName />
     </div>
-  );
+  )
 }
