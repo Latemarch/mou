@@ -1,57 +1,58 @@
-import { Metadata } from 'next'
-import './globals.css'
-import { Inter, Roboto_Mono } from 'next/font/google'
-import localFont from 'next/font/local'
-import SWRProvider from './context/SWRProvider'
+import { Metadata } from "next";
+import "./globals.css";
+import { Inter, Roboto_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import SWRProvider from "./context/SWRProvider";
+import Header from "@/components/Header";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const roboto_mono = Roboto_Mono({
-  subsets: ['latin'],
-  variable: '--font-roboto-mono',
-  display: 'swap',
-})
+  subsets: ["latin"],
+  variable: "--font-roboto-mono",
+  display: "swap",
+});
 
 const myFont = localFont({
-  src: './NanumBrushScript-Regular.ttf',
-  variable: '--font-myFont',
-  display: 'swap',
-})
+  src: "./NanumBrushScript-Regular.ttf",
+  variable: "--font-myFont",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  generator: 'Next.js',
-  title: 'DataFlagship',
-  description: 'Population Distribution Study',
-  referrer: 'origin-when-cross-origin',
-  applicationName: 'DataFlagship',
+  generator: "Next.js",
+  title: "DataFlagship",
+  description: "Population Distribution Study",
+  referrer: "origin-when-cross-origin",
+  applicationName: "DataFlagship",
   // keywords: [],
-  authors: { name: '전준형', url: 'jhjeon@dataslab.co.kr' },
-  colorScheme: 'dark',
-  creator: 'Latemarch',
-  publisher: 'Data science lab',
+  authors: { name: "전준형", url: "jhjeon@dataslab.co.kr" },
+  colorScheme: "dark",
+  creator: "Latemarch",
+  publisher: "Data science lab",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'Population Dist.',
-    siteName: 'DataFlagship',
-    description: 'Population Distribution Study',
+    title: "Population Dist.",
+    siteName: "DataFlagship",
+    description: "Population Distribution Study",
     // image: { url: "/images/frontend.png", alt: "My blog image" },
-    locale: 'kr_KR',
-    type: 'website',
+    locale: "kr_KR",
+    type: "website",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html
@@ -59,11 +60,11 @@ export default function RootLayout({
       className={`${inter.variable} ${roboto_mono.variable} ${myFont.variable} `}
     >
       <body>
+        <Header />
         <SWRProvider>
-          <h1>My App</h1>
           <div>{children}</div>
         </SWRProvider>
       </body>
     </html>
-  )
+  );
 }

@@ -10,6 +10,60 @@ h1 {
   font-family: var(--font-roboto-mono);
   /* font-size: 30px; */
 }
-p {
+/* p {
   font-family: var(--font-myFont);
+} */
+
+/* .speech-bubble {
+  position: absolute;
+  background: white;
+  border: 1px solid black;
+  border-radius: 0.2em;
+}
+
+.speech-bubble:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  margin-left: -5px;
+  margin-bottom: -6px;
+
+  border-top-width: 6px;
+  border-left-width: 6px;
+  border-right-width: 6px;
+  box-shadow: -1px 1px 0 0 black;
+} */
+
+.speech-bubble {
+  position: absolute;
+  background: white;
+  border: 0.5px solid black;
+  border-radius: 0.2em;
+}
+
+.speech-bubble:after,
+.speech-bubble:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border: 5px solid transparent;
+  border-bottom: 0;
+  margin-left: -5px;
+}
+
+.speech-bubble:after {
+  border-top-color: white;
+  margin-bottom: -5px;
+}
+
+.speech-bubble:before {
+  border-top-color: black;
+  margin-bottom: -6px;
 }
