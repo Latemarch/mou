@@ -1,5 +1,6 @@
 "use client";
 import uuid from "react-uuid";
+import EventMark from "./EventMark";
 
 export default function CategoryBar({ data, containerWidth }: any) {
   const divisions = 10;
@@ -24,33 +25,13 @@ export default function CategoryBar({ data, containerWidth }: any) {
           }}
         />
       ))}
-      {data.points &&
+      {containerWidth &&
         data.points.map((point: any) => (
-          <div key={`${point.tag}point`} className="relative group">
-            <div
-              className="h-[28px] w-[22px] opacity-0 bg-black absolute -top-[1px] group-hover:opacity-100"
-              style={{
-                left: `${((point.year - 1920) / 100) * containerWidth - 11}px`,
-                clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-              }}
-            ></div>
-            <div
-              className="h-[26px] w-[20px] bg-white absolute "
-              style={{
-                left: `${((point.year - 1920) / 100) * containerWidth - 10}px`,
-                clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-              }}
-            ></div>
-
-            <p
-              className="speech-bubble bottom-2  -translate-x-1/2 text-black text-xs p-[2px] opacity-0 group-hover:opacity-100 absolute"
-              style={{
-                left: `${((point.year - 1920) / 100) * containerWidth}px`,
-              }}
-            >
-              {point.tag}
-            </p>
-          </div>
+          <EventMark
+            key={point.tag}
+            left={((point.year - 1920) / 100) * containerWidth}
+            tag={point.tag}
+          />
         ))}
     </div>
   );

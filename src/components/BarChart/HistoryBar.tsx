@@ -50,14 +50,12 @@ export default function HistoryBar({ data }: Props) {
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
-    // if (containerRef.current) {
-    //   setContainerWidth(containerRef.current.getBoundingClientRect().width);
-    // }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDragging]);
 
   useEffect(() => {
@@ -84,15 +82,14 @@ export default function HistoryBar({ data }: Props) {
     <div className="flex">
       <CategoryAside data={data} />
       <div className="flex relative gap-1 w-full flex-col py-2">
-        {data &&
-          data.map((el: any) => (
-            <CategoryBar
-              key={`${el.name}category`}
-              data={el}
-              relativePosition={relativePosition}
-              containerWidth={containerWidth}
-            />
-          ))}
+        {data.map((el: any) => (
+          <CategoryBar
+            key={`${el.name}category`}
+            data={el}
+            relativePosition={relativePosition}
+            containerWidth={containerWidth}
+          />
+        ))}
         <Slider
           containerRef={containerRef}
           dotRef={dotRef}
