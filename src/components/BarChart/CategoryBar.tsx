@@ -7,8 +7,8 @@ export default function CategoryBar({ data, containerWidth }: any) {
   const interval = containerWidth / divisions;
 
   const linesXCoordinates = Array.from(
-    { length: divisions - 1 },
-    (_, index) => (index + 1) * interval
+    { length: divisions },
+    (_, index) => index * interval
   );
 
   return (

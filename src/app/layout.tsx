@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   applicationName: "DataFlagship",
   // keywords: [],
   authors: { name: "전준형", url: "jhjeon@dataslab.co.kr" },
-  colorScheme: "dark",
+  // colorScheme: "dark",
   creator: "Latemarch",
   publisher: "Data science lab",
   formatDetection: {

@@ -1,11 +1,12 @@
 "use client";
 import { RefObject, useEffect, useState } from "react";
+import uuid from "react-uuid";
 
 type Props = {
   containerRef: RefObject<HTMLDivElement>;
   dotRef: RefObject<HTMLDivElement>;
   dotPosition: number;
-  containerWidth?: number | null;
+  containerWidth: any;
   relativePosition: number;
   handleMouseDown: (event: React.MouseEvent<HTMLDivElement>) => void;
 };
@@ -18,6 +19,13 @@ export default function Slider({
   handleMouseDown,
 }: Props) {
   const [barPosition, setBarPosition] = useState(0);
+  const divisions = 10;
+  const interval = containerWidth / divisions;
+
+  const linesXCoordinates = Array.from(
+    { length: divisions },
+    (_, index) => index * interval
+  );
 
   useEffect(() => {
     if (containerWidth) {
@@ -34,6 +42,17 @@ export default function Slider({
   return (
     //컨테이너
     <div className="w-full h-1  absolute bottom-0 mx-auto" ref={containerRef}>
+      {linesXCoordinates.map((el, idx) => (
+        <div
+          key={uuid()}
+          className="h-[26px] absolute -translate-x-1/2"
+          style={{
+            left: `${el}px`,
+          }}
+        >
+          {1920 + 10 * idx}
+        </div>
+      ))}
       {/* 막대 위치 */}
       <div
         className="flex w-0 h-1 bg-gray-700 rounded-sm absolute top-1/2 transform -translate-y-1/2 cursor-pointer"
