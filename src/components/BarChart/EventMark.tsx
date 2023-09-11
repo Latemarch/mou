@@ -9,7 +9,7 @@ export default function EventMark({
   return (
     <div className="relative group">
       <div
-        className="h-[28px] w-[22px] opacity-0 bg-black absolute -top-[1px] group-hover:opacity-100"
+        className="h-[28px] w-[22px] bg-black absolute -top-[1px] opacity-0 group-hover:opacity-100"
         style={{
           left: `${left - 11}px`,
           clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
@@ -23,7 +23,7 @@ export default function EventMark({
         }}
       ></div>
       <p
-        className="speech-bubble bottom-2  -translate-x-1/2 text-black text-xs p-[2px] opacity-0 group-hover:opacity-100 absolute"
+        className="speech-bubble bottom-2  -translate-x-1/2 text-black text-xs p-[2px] opacity-0 group-hover:opacity-100 absolute pointer-events-none"
         style={{
           left: `${left}px`,
         }}

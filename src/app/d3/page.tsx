@@ -1,3 +1,4 @@
+import D3Network from "@/components/d3/D3Network";
 import D3Pie from "@/components/d3/D3Pie";
 import D3Tree from "@/components/d3/D3Tree";
 
@@ -6,7 +7,8 @@ export default function page() {
     <div>
       {/* <D3Test /> */}
       {/* <D3Pie /> */}
-      <D3Tree />
+      {/* <D3Tree /> */}
+      <D3Network />
     </div>
   );
 }
