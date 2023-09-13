@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/components/d3/D3Tree.tsx"
-  ],
+, "src/components/d3/D3LineChart.jsx"  ],
   "exclude": ["node_modules"]
 }

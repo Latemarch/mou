@@ -7,7 +7,7 @@ export default function page() {
     <div>
       {/* <D3Test /> */}
       {/* <D3Pie /> */}
-      {/* <D3Tree /> */}
+      <D3Tree />
       <D3Network />
     </div>
   );
