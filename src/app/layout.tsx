@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import "./globals.css";
+// import "./globals.css";
 import { Inter, Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import SWRProvider from "./context/SWRProvider";

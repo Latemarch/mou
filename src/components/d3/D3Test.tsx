@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 
-export default function D3Chart() {
+export default function D3Test() {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
